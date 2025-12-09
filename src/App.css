@@ -1,0 +1,238 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #3498db;
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --text-color: #333;
+  --light-text: #7f8c8d;
+}
+
+body {
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+}
+
+.cv-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 50px;
+  background-color: var(--card-bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.cv-header {
+  text-align: center;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.cv-header h1 {
+  margin: 0 0 15px 0;
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+}
+
+.contact-icon {
+  color: var(--accent-color);
+}
+
+.contact-info a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.cv-section {
+  margin-bottom: 40px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.cv-section h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-icon {
+  color: var(--accent-color);
+}
+
+.cv-section p {
+  margin: 10px 0;
+  text-align: justify;
+}
+
+/* Card Style for Items */
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 4px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--accent-color);
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.item-header h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+.date-badge {
+  background-color: #eef2f5;
+  color: var(--secondary-color);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.skill-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+.skill-card:hover .skill-icon {
+  transform: rotate(10deg);
+}
+
+.skill-name {
+  display: block;
+  font-weight: 600;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+ul {
+  list-style-type: none; /* Remove default bullets */
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+/* Custom list items for experience/achievements */
+.experience-item ul li, .achievements-list li, .cert-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+
+.experience-item ul li::before, .achievements-list li::before, .cert-list li::before {
+  content: "•";
+  color: var(--accent-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  top: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .cv-container {
+    padding: 20px;
+    margin: 10px;
+    width: auto;
+  }
+  
+  .cv-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .date-badge {
+    align-self: flex-start;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
